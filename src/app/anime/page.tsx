@@ -99,7 +99,7 @@ export type RelationshipLinks = {
 async function getAnimes() {
 	const url =
 		"https://kitsu.io/api/edge/anime?sort=popularityRank&page[limit]=20";
-	const options = {};
+	const options = { next: { revalidate: 7200 } };
 
 	try {
 		const response = await fetch(url, options);
