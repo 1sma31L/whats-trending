@@ -1,7 +1,8 @@
 import AnimatedDiv from "@/components/AnimatedDiv";
 import React from "react";
 import "dotenv/config";
-
+import Card from "@/components/Card";
+import { Stream } from "stream";
 export type TMovie = {
 	backdrop_path: string;
 	id: number;
@@ -46,17 +47,23 @@ async function getMovies() {
 
 async function Page() {
 	const movies: TMovie[] = await getMovies();
-
+	const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500/";
 	return (
 		<AnimatedDiv id={1} className="text-[12px] sm:text-[14px]">
 			<div>
 				{movies.length > 0 ? (
-					movies.map((movie) => (
-						<div key={movie.id} className="py-2">
-							<h3 className="text-[20px]">{movie.title}</h3>
-							<p className="text-[15px] text-zinc-500">{movie.overview}</p>
-						</div>
-					))
+					movies.map((movie) => {
+						return (
+							<Card
+								title={movie.title}
+								overview={movie.overview}
+								poster_path={BASE_IMAGE_URL + movie.poster_path}
+								key={movie.id}
+								release_date={String(movie.release_date)}
+								genre_ids={movie.genre_ids}
+							/>
+						);
+					})
 				) : (
 					<p>No movies available.</p>
 				)}

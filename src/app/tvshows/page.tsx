@@ -1,4 +1,5 @@
 import AnimatedDiv from "@/components/AnimatedDiv";
+import Card from "@/components/Card";
 import React from "react";
 
 function page() {
@@ -10,6 +11,7 @@ function page() {
 				dolorem voluptatum? Ratione, porro laboriosam reprehenderit ipsa
 				repudiandae suscipit dolor nihil magnam!
 			</div>
+			<Card />
 		</AnimatedDiv>
 	);
 }

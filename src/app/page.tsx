@@ -43,7 +43,7 @@ export default function Home() {
 						Who The Heck Am I ?
 					</h2>
 					<p className="text-zinc-500 text-[16px] sm:text-[18px]">
-						Ismail, Student at ENSTA, I live in Algeria, Hate it ?, So am I.
+						Ismail, Student at ENSTA, I live in Algeria, Hate it ?, So do I.
 					</p>
 				</div>
 				<hr />
