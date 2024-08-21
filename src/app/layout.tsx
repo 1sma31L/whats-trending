@@ -19,7 +19,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${inter.className} lg:w-[1050px] w-full p-4 sm:px-6 mx-auto min-h-[93vh]`}>
+				className={`${inter.className} lg:w-[1050px] w-full p-4 sm:px-6 mx-auto min-h-[100vh]`}>
 				<header>
 					{/* <p className="font-Fragment text-[12px] sm:text-[14px] pb-2 w-full text-center">
 				Made with &lt;3 by Ismail Boussekine
@@ -47,8 +47,8 @@ export default function RootLayout({
 					<TabsDemo />
 				</header>
 				<main>{children}</main>
-				<footer className="lg:w-[1050px] w-full p-4 sm:px-6 mx-auto">
-					<p className="font-Fragment text-[12px] sm:text-[14px] w-full text-center  ">
+				<footer className="lg:w-[1050px] w-full pt-8 pb-4">
+					<p className="font-Fragment text-[12px] sm:text-[14px] w-full text-center mx-auto">
 						Made with 🖤 by <strong>1sma31l</strong>
 					</p>
 				</footer>
