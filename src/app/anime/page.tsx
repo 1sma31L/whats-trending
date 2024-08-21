@@ -3,102 +3,110 @@ import Card from "@/components/Card";
 import React from "react";
 
 export type TAnime = {
-	id: string;
+	mal_id: number;
+	url: string;
+	images: { [key: string]: Image };
+	trailer: Trailer;
+	approved: boolean;
+	titles: Title[];
+	title: string;
+	title_english: string;
+	title_japanese: string;
+	title_synonyms: string[];
 	type: string;
-	links: AnimeLinks;
-	attributes: Attributes;
-	relationships: { [key: string]: Relationship };
-};
-
-export type Attributes = {
-	createdAt: Date;
-	updatedAt: Date;
-	slug: string;
-	synopsis: string;
-	description: string;
-	coverImageTopOffset: number;
-	titles: Titles;
-	canonicalTitle: string;
-	abbreviatedTitles: string[];
-	averageRating: string;
-	ratingFrequencies: { [key: string]: string };
-	userCount: number;
-	favoritesCount: number;
-	startDate: Date;
-	endDate: null;
-	nextRelease: Date;
-	popularityRank: number;
-	ratingRank: number;
-	ageRating: string;
-	ageRatingGuide: string;
-	subtype: string;
+	source: string;
+	episodes: number;
 	status: string;
-	tba: null;
-	posterImage: PosterImage;
-	coverImage: CoverImage;
-	episodeCount: null;
-	episodeLength: number;
-	totalLength: number;
-	youtubeVideoId: string;
-	showType: string;
-	nsfw: boolean;
+	airing: boolean;
+	aired: Aired;
+	duration: string;
+	rating: string;
+	score: number;
+	scored_by: number;
+	rank: number;
+	popularity: number;
+	members: number;
+	favorites: number;
+	synopsis: string;
+	background: string;
+	season: string;
+	year: number;
+	broadcast: Broadcast;
+	producers: Demographic[];
+	licensors: any[];
+	studios: Demographic[];
+	genres: Demographic[];
+	explicit_genres: any[];
+	themes: any[];
+	demographics: Demographic[];
 };
 
-export type CoverImage = {
-	tiny: string;
-	large: string;
-	small: string;
-	original: string;
-	meta: Meta;
+export type Aired = {
+	from: Date;
+	to: Date;
+	prop: Prop;
+	string: string;
 };
 
-export type Meta = {
-	dimensions: Dimensions;
+export type Prop = {
+	from: From;
+	to: From;
 };
 
-export type Dimensions = {
-	tiny: Large;
-	large: Large;
-	small: Large;
-	medium?: Large;
+export type From = {
+	day: number;
+	month: number;
+	year: number;
 };
 
-export type Large = {
-	width: number;
-	height: number;
+export type Broadcast = {
+	day: string;
+	time: string;
+	timezone: string;
+	string: string;
 };
 
-export type PosterImage = {
-	tiny: string;
-	large: string;
-	small: string;
-	medium: string;
-	original: string;
-	meta: Meta;
+export type Demographic = {
+	mal_id: number;
+	type: Type;
+	name: string;
+	url: string;
 };
 
-export type Titles = {
-	en: string;
-	en_jp: string;
-	ja_jp: string;
+export enum Type {
+	Anime = "anime",
+}
+
+export type Image = {
+	image_url: string;
+	small_image_url: string;
+	large_image_url: string;
 };
 
-export type AnimeLinks = {
-	self: string;
+export type Title = {
+	type: string;
+	title: string;
 };
 
-export type Relationship = {
-	links: RelationshipLinks;
+export type Trailer = {
+	youtube_id: string;
+	url: string;
+	embed_url: string;
+	images: Images;
 };
 
-export type RelationshipLinks = {
-	self: string;
-	related: string;
+export type Images = {
+	image_url: string;
+	small_image_url: string;
+	medium_image_url: string;
+	large_image_url: string;
+	maximum_image_url: string;
 };
 
 async function getAnimes() {
-	const url =
-		"https://kitsu.io/api/edge/anime?sort=popularityRank&page[limit]=20";
+	// const url =
+	// 	"https://kitsu.io/api/edge/anime?sort=popularityRank&page[limit]=20";
+	const url = "https://api.jikan.moe/v4/top/anime";
 	const options = { next: { revalidate: 7200 } };
 
 	try {
@@ -116,8 +124,9 @@ async function getAnimes() {
 
 async function page() {
 	const animes: TAnime[] = await getAnimes();
-	const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500/";
+
 	return (
+		
 		<AnimatedDiv id={1} className="text-[12px] sm:text-[14px]">
 			<div>
 				{animes.length > 0 ? (
@@ -125,11 +134,12 @@ async function page() {
 						return (
 							<Card
 								type="anime"
-								title={anime.attributes.canonicalTitle}
-								overview={anime.attributes.description}
-								poster_path={anime.attributes.posterImage.small}
-								key={anime.id}
-								release_date={String(anime.attributes.startDate)}
+								title={anime.title}
+								overview={anime.synopsis}
+								poster_path={anime.images.jpg.image_url}
+								key={anime.mal_id}
+								genre_ids={anime.genres.map((genre) => genre.name)} // ["",""]
+								release_date={String(anime.aired.prop.from.year)}
 							/>
 						);
 					})

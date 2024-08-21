@@ -47,6 +47,7 @@ async function getTvShows() {
 async function page() {
 	const tvshows: TTVShow[] = await getTvShows();
 	const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w200/";
+
 	return (
 		<AnimatedDiv id={1} className="text-[12px] sm:text-[14px]">
 			<div>

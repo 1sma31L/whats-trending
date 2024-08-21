@@ -3,18 +3,16 @@ export default function Home() {
 	return (
 		<AnimatedDiv id={0} className="text-[12px] sm:text-[14px]">
 			<div className="flex flex-col gap-2  w-full">
-				<p className="text-zinc-500 text-[16px] sm:text-[18px]">
-					Find out about what it is trending right now in cinema or in anime
-					using my website.
-				</p>
 				<div className="py-2">
 					<h2 className="text-zinc-900 font-Fragment text-[20px] sm:text-[24px] pb-2">
 						How Does It Work ?
 					</h2>
+
 					<p className="text-zinc-500 text-[16px] sm:text-[18px]">
 						It uses TMDB API under the hood to fetch the data and display it in
 						a nice way.
 					</p>
+					<div className="absolute"></div>
 				</div>
 				<hr />
 				<div className="py-2">
@@ -45,15 +43,6 @@ export default function Home() {
 					</h2>
 					<p className="text-zinc-500 text-[16px] sm:text-[18px]">
 						Ismail, Student at ENSTA, I live in Algeria, You hate it ?, So do I.
-					</p>
-				</div>
-				<hr />
-				<div className="py-2">
-					<h2 className="text-zinc-900 font-Fragment text-[20px] sm:text-[24px] pb-2">
-						Wanna Hear Somthing ?
-					</h2>
-					<p className="text-zinc-500 text-[16px] sm:text-[18px]">
-						Fuck the jews.
 					</p>
 				</div>
 			</div>

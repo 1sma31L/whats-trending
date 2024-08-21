@@ -19,10 +19,10 @@ function AnimatedDiv({
 	const animation = {
 		initial: { opacity: 0, y: 100 },
 		animate: {
-			opacity: [0, 0, 1],
-			y: [20, -10, 0],
+			opacity: [0, 0.5, 1],
+			y: [20, -5, 0],
 			transition: {
-				duration: 0.3,
+				duration: 1,
 				times: [0, 0.2, 1],
 				ease: [0.175, 0.885, 0.32, 1.275],
 			},
