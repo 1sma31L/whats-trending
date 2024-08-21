@@ -23,8 +23,9 @@ export default function Home() {
 					</h2>
 					<p className="text-zinc-500 text-[16px] sm:text-[18px]">
 						It was made using React with Next.js for routing and SSR,
-						TailwindCSS and Framer Motion for styling and animations, and some
-						components from AceternutyUI and TMDB API for data fetching.
+						TailwindCSS and Framer Motion for styling and animations,some
+						components from AceternutyUI and TMDB API with Kitsu API for data
+						fetching.
 					</p>
 				</div>
 				<hr />

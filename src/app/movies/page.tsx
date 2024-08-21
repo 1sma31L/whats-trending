@@ -66,7 +66,7 @@ async function Page() {
 						);
 					})
 				) : (
-					<p>No movies available.</p>
+					<p>No movies are available.</p>
 				)}
 			</div>
 		</AnimatedDiv>
