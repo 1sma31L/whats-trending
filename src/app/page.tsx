@@ -1,42 +1,20 @@
-/* eslint-disable @next/next/no-img-element */
 import AnimatedDiv from "@/components/AnimatedDiv";
-import { TabsDemo } from "../components/TabsDemo";
 export default function Home() {
 	return (
 		<AnimatedDiv id={0} className="text-[12px] sm:text-[14px]">
-			<div className="container">
-				<h2 className="section-title">About "What's Trending?"</h2>
-				<div className="row">
-					<div className="col-md-6">
-						<p>
-							"What's Trending?" is a simple and intuitive website that helps
-							you stay up-to-date with the latest trends in the world of
-							entertainment. Whether you're a movie enthusiast, a TV show
-							fanatic, or an anime lover, this platform is your one-stop-shop
-							for discovering the hottest titles and staying ahead of the curve.
-						</p>
-					</div>
-					<div className="col-md-6">
-						<p>
-							Our team of dedicated researchers and passionate fans scour the
-							internet, analyze the data, and curate the most comprehensive and
-							up-to-date information on the trending movies, TV shows, and
-							anime. We believe in providing our users with a seamless and
-							enjoyable experience, so you can explore the latest trends with
-							ease and confidence.
-						</p>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-md-12">
-						<p>
-							At "What's Trending?", our mission is to be your trusted companion
-							in the ever-evolving landscape of entertainment. We strive to be
-							the go-to resource for anyone who wants to stay informed, discover
-							new favorites, and engage with the global community of
-							entertainment enthusiasts.
-						</p>
-					</div>
+			<div className="flex flex-col gap-2">
+				<p className="text-zinc-500 text-[16px] sm:text-[18px]">
+					Find out about what it is trending right now in cinema or in aninme
+					using my website.
+				</p>
+				<div>
+					<h2 className="text-zinc-900 font-Fragment text-[20px] sm:text-[24px]">
+						How Was It Made?
+					</h2>
+					<p className="text-zinc-500 text-[16px] sm:text-[18px]">
+						It uses TMDB API under the hood to fetch the data and display it in
+						a nice way.
+					</p>
 				</div>
 			</div>
 		</AnimatedDiv>
