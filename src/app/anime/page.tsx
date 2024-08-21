@@ -127,7 +127,7 @@ async function page() {
 								type="anime"
 								title={anime.attributes.canonicalTitle}
 								overview={anime.attributes.description}
-								poster_path={anime.attributes.posterImage.original}
+								poster_path={anime.attributes.posterImage.small}
 								key={anime.id}
 								release_date={String(anime.attributes.startDate)}
 							/>
