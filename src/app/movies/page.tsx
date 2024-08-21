@@ -57,7 +57,7 @@ async function Page() {
 						</div>
 					))
 				) : (
-					<p>No movies available.</p>
+					<p>No movies available.{process.env.ACCESS_TOKEN_AUTH}</p>
 				)}
 			</div>
 		</AnimatedDiv>
