@@ -28,6 +28,7 @@ async function getMovies() {
 			accept: "application/json",
 			Authorization: `Bearer ${process.env.ACCESS_TOKEN_AUTH}`,
 		},
+		next: { revalidate: 7200 },
 	};
 
 	try {
@@ -57,7 +58,7 @@ async function Page() {
 						</div>
 					))
 				) : (
-					<p>No movies available.{process.env.ACCESS_TOKEN_AUTH}</p>
+					<p>No movies available.</p>
 				)}
 			</div>
 		</AnimatedDiv>
