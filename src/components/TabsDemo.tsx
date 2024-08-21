@@ -10,7 +10,9 @@ export function TabsDemo() {
 			title: "About",
 			value: "about",
 			content: (
-				<AnimatedDiv className="text-[20px] flex gap-2 flex-col" id={1}>
+				<AnimatedDiv
+					className="text-[12px] sm:text-[14px] flex gap-2 flex-col"
+					id={1}>
 					<About />
 				</AnimatedDiv>
 			),
@@ -19,7 +21,7 @@ export function TabsDemo() {
 			title: "Movies",
 			value: "movies",
 			content: (
-				<AnimatedDiv className="text-[16px] sm:text-[18px]" id={2}>
+				<AnimatedDiv className="text-[12px] sm:text-[14px] " id={2}>
 					<Movies />
 				</AnimatedDiv>
 			),
@@ -28,7 +30,7 @@ export function TabsDemo() {
 			title: "Tv Shows",
 			value: "tv-shows",
 			content: (
-				<AnimatedDiv id={3} className="text-[20px]">
+				<AnimatedDiv id={3} className="text-[12px] sm:text-[14px]">
 					<TVShows />
 				</AnimatedDiv>
 			),
@@ -37,7 +39,7 @@ export function TabsDemo() {
 			title: "Anime",
 			value: "anime",
 			content: (
-				<AnimatedDiv className="text-[20px]" id={4}>
+				<AnimatedDiv className="text-[12px] sm:text-[14px]" id={4}>
 					<Anime />
 				</AnimatedDiv>
 			),

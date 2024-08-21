@@ -34,7 +34,7 @@ export const Tabs = ({
 		<div className="flex flex-col">
 			<div
 				className={cn(
-					"flex flex-row items-center justify-start [perspective:1000px] relative overflow-visible sm:overflow-visible no-visible-scrollbar max-w-full w-full text-[16px] sm:text-[18px] gap-1 py-8",
+					"flex flex-row items-center justify-start [perspective:1000px] relative overflow-visible sm:overflow-visible no-visible-scrollbar max-w-full w-full text-[14px] sm:text-[16px] gap-1 py-8",
 					containerClassName
 				)}>
 				{propTabs.map((tab, idx) => (
@@ -43,10 +43,7 @@ export const Tabs = ({
 						onClick={() => {
 							moveSelectedTabToTop(idx);
 						}}
-						className={cn(
-							"relative px-2 py-1 hover:bg-zinc-200 rounded-md transition-all duration-75 ease-in-out",
-							tabClassName
-						)}
+						className={cn("relative px-2 py-1 rounded-md", tabClassName)}
 						style={{
 							transformStyle: "preserve-3d",
 						}}>
