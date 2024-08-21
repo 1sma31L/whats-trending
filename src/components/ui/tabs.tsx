@@ -27,7 +27,7 @@ export const Tabs = ({
 	const [active, setActive] = useState<Tab>(
 		propTabs.filter((tab) => {
 			return tab.link === pathName;
-		})[0]
+		})[0] || propTabs[0]
 	);
 	const [tabs, setTabs] = useState<Tab[]>(propTabs);
 	const moveSelectedTabToTop = (idx: number) => {
