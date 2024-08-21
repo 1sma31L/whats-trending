@@ -2,8 +2,26 @@ import AnimatedDiv from "@/components/AnimatedDiv";
 import React from "react";
 import "dotenv/config";
 
+export type TMovie = {
+	backdrop_path: string;
+	id: number;
+	title: string;
+	original_title: string;
+	overview: string;
+	poster_path: string;
+	media_type: string;
+	adult: boolean;
+	original_language: string;
+	genre_ids: number[];
+	popularity: number;
+	release_date: Date;
+	video: boolean;
+	vote_average: number;
+	vote_count: number;
+};
+
 async function page() {
-	let movies = [];
+	let movies: TMovie[] = [];
 	const url = "https://api.themoviedb.org/3/trending/movie/day?language=en-US";
 	const options = {
 		method: "GET",
