@@ -55,6 +55,7 @@ async function Page() {
 					movies.map((movie) => {
 						return (
 							<Card
+								type="movie"
 								title={movie.title}
 								overview={movie.overview}
 								poster_path={BASE_IMAGE_URL + movie.poster_path}
