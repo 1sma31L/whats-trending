@@ -33,8 +33,8 @@ export default function Home() {
 						Why ?
 					</h2>
 					<p className="text-zinc-500 text-[16px] sm:text-[18px]">
-						I Always wanted to make a really SIMPLE website to check what are
-						currently trending in Entertainment industry.
+						I Always wanted to make a really SIMPLE website to check what is
+						currently trending in the Entertainment industry.
 					</p>
 				</div>
 				<hr />
@@ -43,7 +43,7 @@ export default function Home() {
 						Who The Heck Am I ?
 					</h2>
 					<p className="text-zinc-500 text-[16px] sm:text-[18px]">
-						Ismail, Student at ENSTA, I live in Algeria, Hate it ?, So do I.
+						Ismail, Student at ENSTA, I live in Algeria, You hate it ?, So do I.
 					</p>
 				</div>
 				<hr />

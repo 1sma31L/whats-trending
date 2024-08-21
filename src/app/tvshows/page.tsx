@@ -11,7 +11,6 @@ function page() {
 				dolorem voluptatum? Ratione, porro laboriosam reprehenderit ipsa
 				repudiandae suscipit dolor nihil magnam!
 			</div>
-			<Card />
 		</AnimatedDiv>
 	);
 }

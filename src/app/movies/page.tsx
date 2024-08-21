@@ -2,7 +2,7 @@ import AnimatedDiv from "@/components/AnimatedDiv";
 import React from "react";
 import "dotenv/config";
 import Card from "@/components/Card";
-import { Stream } from "stream";
+
 export type TMovie = {
 	backdrop_path: string;
 	id: number;
