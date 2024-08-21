@@ -42,14 +42,15 @@ async function page() {
 	return (
 		<AnimatedDiv id={1} className="text-[12px] sm:text-[14px]">
 			<div>
-				{movies.map((movie: any) => {
-					return (
-						<div className="py-2">
-							<h3 className="text-[20px]">{movie.title}</h3>
-							<p className="text-[15px] text-zinc-500">{movie.overview}</p>
-						</div>
-					);
-				})}
+				{movies.length &&
+					movies.map((movie: any) => {
+						return (
+							<div className="py-2">
+								<h3 className="text-[20px]">{movie.title}</h3>
+								<p className="text-[15px] text-zinc-500">{movie.overview}</p>
+							</div>
+						);
+					})}
 			</div>
 		</AnimatedDiv>
 	);
