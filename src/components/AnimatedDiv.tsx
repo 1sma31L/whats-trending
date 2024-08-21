@@ -1,5 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 function AnimatedDiv({
 	children,
 	className,
@@ -9,6 +10,12 @@ function AnimatedDiv({
 	className?: string;
 	id?: number;
 }) {
+	const controls = useAnimation();
+
+	useEffect(() => {
+		controls.start("animate");
+	}, [controls]);
+
 	const animation = {
 		initial: { opacity: 0, y: 100 },
 		animate: {
@@ -27,7 +34,7 @@ function AnimatedDiv({
 		<motion.div
 			key={id}
 			initial="initial"
-			animate="animate"
+			animate={controls}
 			exit="exit"
 			transition={{ duration: 0.3 }}
 			variants={animation}>
