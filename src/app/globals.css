@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: "Fragment";
+	src: url("/Fonts/PPFragment/Glare/PPFragment-GlareRegular.otf")
+		format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+.no-visible-scrollbar {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	-webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+	display: none;
+}
