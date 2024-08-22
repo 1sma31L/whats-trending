@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-
+import { Analytics } from "@vercel/analytics/react";
 import ThemeToggler from "@/components/theme-toggler";
 import { ThemeProvider } from "@/app/theme-provider";
 import type { Metadata } from "next";
@@ -26,6 +26,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				className={`${inter.className} lg:w-[1050px] w-full p-4 sm:px-6 mx-auto min-h-[100vh] relative dark:bg-zinc-900`}>
+				<Analytics />
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
