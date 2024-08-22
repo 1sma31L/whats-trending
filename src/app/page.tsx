@@ -12,7 +12,7 @@ export default function Home() {
 						<p className="text-zinc-500 dark:text-zinc-400 text-[10px] md:text-[14px]">
 							It uses TMDB API & Jikan API under the hood to fetch the data and
 							display it so this will casually show the trending movies and tv
-							shows as of this moment (not really I made Next.js SSR revalidates
+							shows as of this moment (not really I made Next.js SSG revalidates
 							the api call each 1h 7200 second to make the response to the
 							server fast) but you got the point.
 						</p>
