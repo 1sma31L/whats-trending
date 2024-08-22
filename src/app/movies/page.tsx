@@ -44,7 +44,11 @@ async function getMovies() {
 		return [];
 	}
 }
-
+export const generateMetadata = () => {
+	return {
+		title: "What's Trending in Movies ?",
+	};
+};
 async function Page() {
 	const movies: TMovie[] = await getMovies();
 	const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w200/";

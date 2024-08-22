@@ -43,7 +43,11 @@ async function getTvShows() {
 		return [];
 	}
 }
-
+export const generateMetadata = () => {
+	return {
+		title: "What's Trending in TV Shows ?",
+	};
+};
 async function page() {
 	const tvshows: TTVShow[] = await getTvShows();
 	const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w200/";

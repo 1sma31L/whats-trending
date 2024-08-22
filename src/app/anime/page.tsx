@@ -121,6 +121,11 @@ async function getAnimes() {
 		return [];
 	}
 }
+export const generateMetadata = () => {
+	return {
+		title: "What's Trending in Animes ?",
+	};
+};
 
 async function page() {
 	const animes: TAnime[] = await getAnimes();
