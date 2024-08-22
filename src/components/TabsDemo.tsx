@@ -1,9 +1,6 @@
 import { Tabs } from "./ui/tabs";
 import AnimatedDiv from "./AnimatedDiv";
-// import About from "./About";
-// import Movies from "./Movies";
-// import TVShows from "./TVShows";
-// import Anime from "./Anime";
+
 export function TabsDemo() {
 	const tabs = [
 		{

@@ -52,7 +52,7 @@ export const Tabs = ({
 								moveSelectedTabToTop(idx);
 							}}
 							className={cn(
-								"relative px-2 py-1 rounded-md xl:hover:bg-zinc-100 transition-all duration-75",
+								"relative px-2 py-1 rounded-md xl:hover:bg-zinc-100 dark:xl:hover:bg-zinc-800 transition-all duration-75",
 								tabClassName
 							)}
 							style={{
@@ -63,7 +63,7 @@ export const Tabs = ({
 									layoutId="clickedbutton"
 									transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
 									className={cn(
-										"absolute inset-0 bg-zinc-800 dark:bg-zinc-800 rounded-md ",
+										"absolute inset-0 bg-zinc-800 dark:bg-white rounded-md ",
 										activeTabClassName
 									)}
 								/>
@@ -71,9 +71,9 @@ export const Tabs = ({
 							<span
 								className={`${
 									active.value === tab.value
-										? "text-zinc-100 dark:text-zinc-100"
-										: "text-zinc-600 dark:text-zinc-600"
-								} relative block transition-colors duration-500 ease-in-out`}>
+										? "text-zinc-100 dark:text-black"
+										: "text-zinc-500 dark:text-zinc-500 "
+								} relative block transition-colors duration-100 ease-in-out`}>
 								{tab.title}
 							</span>
 						</button>

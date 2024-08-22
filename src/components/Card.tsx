@@ -512,17 +512,17 @@ async function Card({
 	const genres =
 		type === "movie" ? movieGenres : type === "tv" ? tvGenres : animeGenres;
 	return (
-		<div className="flex flex-row min-h-[150px] gap-4 my-4 border rounded-md md:rounded-xl  xl:hover:translate-x-2 overflow-hidden transition-all duration-300">
+		<div className="flex flex-row min-h-[150px] gap-4 my-4 border rounded-md md:rounded-xl  xl:hover:translate-x-2 overflow-hidden transition-all duration-300 dark:border-zinc-800">
 			<img
 				src={poster_path}
 				alt=""
 				className={`w-[110px] md:w-[150px] object-cover`}
 			/>
-			<div className="p-3 r-4 order-2">
-				<h3 className="font-bold text-[18px] sm:text-[20px] md:text-[24px] font-Fragment my-1 pr-1">
+			<div className="p-3 r-4 order-2 overflow-hidden">
+				<h3 className="font-bold text-[18px] sm:text-[20px] md:text-[24px] font-Fragment my-1 pr-1 line-clamp-2 text-zinc-900 dark:text-zinc-100">
 					{`${title} (${release_date ? release_date.slice(0, 4) : ""})`}
 				</h3>
-				<p className="text-[10px] sm:text-[14px] md:text-[16px] text-zinc-500 py-1 indent-1 line-clamp-4  max-w-full mb-2">
+				<p className="text-[10px] md:text-[14px] text-zinc-500 dark:text-zinc-400 py-1 indent-1 line-clamp-4 lg:line-clamp-6  max-w-full mb-3 text-ellipsis max-h-[65px] sm:max-h-[68px] md:max-h-[90px]">
 					{overview}
 				</p>
 				<div className="flex flex-row flex-wrap gap-y-1 gap-x-1 pr-1">
@@ -532,10 +532,8 @@ async function Card({
 								return (
 									<span
 										key={id}
-										className={`text-[10px] md:text-[13px] text-white
-								${genre?.color || "bg-[#2d3748]"}
-								
-								bg-black sm:text-[10px] py-1 px-2 rounded-sm`}>
+										className={`text-[9px] font-bold md:text-[12px] text-white
+								${genre?.color || "bg-[#2d3748]"} bg-black py-1 px-2 rounded-md`}>
 										{genre?.name}
 									</span>
 								);
@@ -553,10 +551,8 @@ async function Card({
 								return (
 									<span
 										key={genre}
-										className={`text-[10px] md:text-[13px] text-white
-								${genreColor || "bg-[#2d3748]"}
-								
-								bg-black sm:text-[10px] py-1 px-2 rounded-sm `}>
+										className={`text-[9px] font-bold md:text-[12px] text-white
+								${genreColor || "bg-[#2d3748]"} bg-black  py-1 px-2 rounded-md `}>
 										{genre}
 									</span>
 								);

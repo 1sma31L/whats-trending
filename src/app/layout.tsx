@@ -1,4 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+
+import ThemeToggler from "@/components/theme-toggler";
+import { ThemeProvider } from "@/app/theme-provider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -19,44 +22,56 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${inter.className} lg:w-[1050px] w-full p-4 sm:px-6 mx-auto min-h-[100vh]`}>
-				<div>
+				className={`${inter.className} lg:w-[1050px] w-full p-4 sm:px-6 mx-auto min-h-[100vh] relative dark:bg-zinc-900`}>
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange>
 					<header>
-						{/* <p className="font-Fragment text-[12px] sm:text-[14px] pb-2 w-full text-center">
-				Made with &lt;3 by Ismail Boussekine
-			</p> */}
-						<h1 className="font-Fragment text-[38px] leading-[3rem]">
+						<h1 className="font-Fragment text-[38px] leading-[3rem] text-zinc-900 dark:text-zinc-100">
 							What&apos;s Trending ?
 						</h1>
-						<p className="text-zinc-500 text-[14px] sm:text-[18px] max-w-[600px] mt-2 mb-4">
+						<p className="text-zinc-500 dark:text-zinc-400 text-[14px] sm:text-[18px] max-w-[600px] mt-2 mb-4">
 							Simple website to check what are the <u>trending</u> Movies, TV
 							Shows and Anime.
 						</p>
-						<div className="flex w-[80px] sm:w-[100px] justify-between items-center">
-							<a href="https://x.com/11sma31l" target="_blank">
-								<img src="/x.svg" alt="x" className="w-5 h-5" />
-							</a>
-							<a href="https://github.com/1sma31l" target="_blank">
-								<img src="/github.svg" alt="github" className="w-5 h-5" />
-							</a>
-							<a
-								href="https://linkedin.com/in/ismail-boussekine"
-								target="_blank">
-								<img src="/linkedin.svg" alt="linkedin" className="w-5 h-5" />
-							</a>
+						<div className="flex justify-between items-center">
+							<div className="flex flex-row justify-between items-center w-[80px] sm:w-[100px]">
+								<a href="https://x.com/11sma31l" target="_blank">
+									<img src="/x.svg" alt="x" className="w-5 h-5 dark:invert" />
+								</a>
+								<a href="https://github.com/1sma31l" target="_blank">
+									<img
+										src="/github.svg"
+										alt="github"
+										className="w-5 h-5 dark:invert"
+									/>
+								</a>
+								<a
+									href="https://linkedin.com/in/ismail-boussekine"
+									target="_blank">
+									<img
+										src="/linkedin.svg"
+										alt="linkedin"
+										className="w-5 h-5 dark:invert"
+									/>
+								</a>
+							</div>
+							<ThemeToggler />
 						</div>
-
-						<hr className="mt-6" />
-
+						<hr className="mt-6 dark:border-zinc-700 border-zinc-300" />
 						<TabsDemo />
 					</header>
 					<main>{children}</main>
 					<footer className="lg:w-[1050px] w-full pt-8 pb-4">
 						<p className="font-Fragment text-[12px] sm:text-[14px] w-full text-center mx-auto">
-							Made with 🖤 by <strong>1sma31l</strong>
+							Made with <span className="hidden dark:inline-block">🤍</span>
+							<span className="dark:hidden">🖤</span> by{" "}
+							<strong>1sma31l</strong>
 						</p>
 					</footer>
-				</div>
+				</ThemeProvider>
 			</body>
 		</html>
 	);
