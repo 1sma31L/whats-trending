@@ -12,6 +12,9 @@ export const metadata: Metadata = {
 	title: "What's Trending ?",
 	description:
 		"Simple web site to check what are the trending movies and tv shows and anime.",
+	icons: {
+		icon: "/favicon.ico",
+	},
 };
 
 export default function RootLayout({
