@@ -10,8 +10,11 @@ export default function Home() {
 							How Does It Work ?
 						</h2>
 						<p className="text-zinc-500 dark:text-zinc-400 text-[16px] sm:text-[18px]">
-							It uses TMDB API under the hood to fetch the data and display it
-							in a nice way.
+							It uses TMDB API & Jikan API under the hood to fetch the data and
+							display it saw this is casually showing the trending movies and tv
+							shows as of this moment (not really Next.js SSR revalidates the
+							api call each 1h 7200 second to make the response to the server
+							fast).
 						</p>
 						<div className="absolute"></div>
 					</div>
@@ -23,8 +26,8 @@ export default function Home() {
 						<p className="text-zinc-500 text-[16px] sm:text-[18px] dark:text-zinc-400">
 							It was made using React with Next.js for routing and SSR,
 							TailwindCSS and Framer Motion for styling and animations,some
-							components from AceternutyUI and TMDB API with Kitsu API for data
-							fetching.
+							components from AceternutyUI and Shadcn-ui (FUCK THEM) and TMDB
+							API with Jikan API for data fetching as mentioned before.
 						</p>
 					</div>
 					<hr className="dark:border-zinc-700 border-zinc-200" />
