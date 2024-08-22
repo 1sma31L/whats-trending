@@ -9,7 +9,7 @@ export default function Home() {
 						<h2 className="text-zinc-900 dark:text-white font-Fragment text-[20px] sm:text-[24px] pb-2">
 							How Does It Work ?
 						</h2>
-						<p className="text-zinc-500 dark:text-zinc-400 text-[16px] sm:text-[18px]">
+						<p className="text-zinc-500 dark:text-zinc-400 text-[10px] md:text-[14px]">
 							It uses TMDB API & Jikan API under the hood to fetch the data and
 							display it saw this is casually showing the trending movies and tv
 							shows as of this moment (not really Next.js SSR revalidates the
@@ -23,7 +23,7 @@ export default function Home() {
 						<h2 className="text-zinc-900 dark:text-white font-Fragment text-[20px] sm:text-[24px] pb-2">
 							How Was It Made ?
 						</h2>
-						<p className="text-zinc-500 text-[16px] sm:text-[18px] dark:text-zinc-400">
+						<p className="text-zinc-500 text-[10px] md:text-[14px] dark:text-zinc-400">
 							It was made using React with Next.js for routing and SSR,
 							TailwindCSS and Framer Motion for styling and animations,some
 							components from AceternutyUI and Shadcn-ui (FUCK THEM) and TMDB
@@ -35,7 +35,7 @@ export default function Home() {
 						<h2 className="text-zinc-900 font-Fragment text-[20px] sm:text-[24px] pb-2 dark:text-white">
 							Why ?
 						</h2>
-						<p className="text-zinc-500 dark:text-zinc-400 text-[16px] sm:text-[18px]">
+						<p className="text-zinc-500 dark:text-zinc-400 text-[10px] md:text-[14px]">
 							I Always wanted to make a really SIMPLE website to check what is
 							currently trending in the Entertainment industry.
 						</p>
@@ -45,7 +45,7 @@ export default function Home() {
 						<h2 className="text-zinc-900 font-Fragment text-[20px] sm:text-[24px] pb-2 dark:text-white">
 							Who The Heck Am I ?
 						</h2>
-						<p className="text-zinc-500 dark:text-zinc-400 text-[16px] sm:text-[18px]">
+						<p className="text-zinc-500 dark:text-zinc-400 text-[10px] md:text-[14px]">
 							Ismail, Student at ENSTA, I live in Algeria, You hate it ?, So do
 							I.
 						</p>
