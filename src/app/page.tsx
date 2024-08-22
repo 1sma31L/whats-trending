@@ -11,10 +11,10 @@ export default function Home() {
 						</h2>
 						<p className="text-zinc-500 dark:text-zinc-400 text-[10px] md:text-[14px]">
 							It uses TMDB API & Jikan API under the hood to fetch the data and
-							display it saw this is casually showing the trending movies and tv
-							shows as of this moment (not really Next.js SSR revalidates the
-							api call each 1h 7200 second to make the response to the server
-							fast).
+							display it so this will casually show the trending movies and tv
+							shows as of this moment (not really I made Next.js SSR revalidates
+							the api call each 1h 7200 second to make the response to the
+							server fast) but you got the point.
 						</p>
 						<div className="absolute"></div>
 					</div>
