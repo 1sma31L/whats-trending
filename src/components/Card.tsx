@@ -522,7 +522,7 @@ async function Card({
 				<h3 className="font-bold text-[20px] sm:text-[24px] font-Fragment my-1 pr-1 line-clamp-2 text-zinc-900 dark:text-zinc-100">
 					{`${title} (${release_date ? release_date.slice(0, 4) : ""})`}
 				</h3>
-				<p className="text-[10px] md:text-[14px] text-zinc-500 dark:text-zinc-400 py-1 indent-1 line-clamp-4 lg:line-clamp-6  max-w-full mb-3 text-ellipsis max-h-[65px] sm:max-h-[68px] md:max-h-[90px]">
+				<p className="text-[12px] md:text-[14px] text-zinc-500 dark:text-zinc-400 py-1 indent-1 line-clamp-4 lg:line-clamp-6  max-w-full mb-3 text-ellipsis max-h-[65px] sm:max-h-[68px] md:max-h-[90px]">
 					{overview}
 				</p>
 				<div className="flex flex-row flex-wrap gap-y-1 gap-x-1 pr-1">
