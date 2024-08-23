@@ -540,7 +540,7 @@ async function Card({
 									<span
 										key={id}
 										className={`text-[10px] font-bold md:text-[12px] text-white
-								${genre?.color || "bg-[#2d3748]"} bg-black py-1 px-2  rounded-md`}>
+								 bg-black py-1 px-2  rounded-md`}>
 										{genre?.name}
 									</span>
 								);
@@ -552,14 +552,14 @@ async function Card({
 					{genre_ids && type === "anime"
 						? genre_ids.map((genre) => {
 								// const genre = genres.find((genre) => genre.id === id);
-								const genreColor = animeGenres.find(
-									(animeGenre) => animeGenre.name === genre
-								)?.color;
+								// const genreColor = animeGenres.find(
+								// 	(animeGenre) => animeGenre.name === genre
+								// )?.color;
 								return (
 									<span
 										key={genre}
 										className={`text-[9px] font-bold md:text-[12px] text-white
-								${genreColor || "bg-[#2d3748]"} bg-black  py-1 px-2 rounded-md `}>
+								 bg-black  py-1 px-2 rounded-md `}>
 										{genre}
 									</span>
 								);
