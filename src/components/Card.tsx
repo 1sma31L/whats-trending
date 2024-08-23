@@ -530,7 +530,11 @@ async function Card({
 				</h2>
 				<div className="flex-grow max-w-full">
 					<p
-						className={`indent-2 text-[12px] md:text-[14px] text-zinc-500 dark:text-zinc-400 md:line-clamp-4 lg:line-clamp-5  w-full text-ellipsis line-clamp-3`}>
+						className={`indent-2 text-[12px] md:text-[14px] text-zinc-500 dark:text-zinc-400 w-full text-ellipsis leading-[1.1rem] ${
+							type === "anime"
+								? "md:line-clamp-4 lg:line-clamp-5 line-clamp-3"
+								: ""
+						}`}>
 						{overview}
 					</p>
 				</div>
