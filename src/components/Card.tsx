@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 export type TGenere = {
 	id?: number;
 	name: string;
@@ -511,24 +511,26 @@ async function Card({
 }: TCard) {
 	const genres =
 		type === "movie" ? movieGenres : type === "tv" ? tvGenres : animeGenres;
+	const numberOfGeneres = genre_ids?.length || 0;
+
 	return (
 		<div className="flex flex-row min-h-[150px] gap-1 my-4 border rounded-md md:rounded-xl  xl:hover:translate-x-2 overflow-hidden transition-all duration-300 dark:border-zinc-800 relative">
-			<Image
+			{/* <Image
 				src={poster_path}
 				alt="Poster Image"
 				quality={75}
-				className={`object-cover w-[120px] md:w-[150px]`}
-				width={180}
-				height={250}
+				className={`object-cover`}
+				width={140}
+				height={200}
 				priority
-			/>
-
-			<div className="p-3 pr-4 flex flex-col">
+			/> */}
+			<div className="p-3 pr-4 flex flex-col	">
 				<h2 className="font-bold text-[20px] sm:text-[24px] font-Fragment my-1 line-clamp-2 text-zinc-900 dark:text-zinc-100">
 					{`${title} (${release_date ? release_date.slice(0, 4) : ""})`}
 				</h2>
 				<div className="flex-grow max-w-full">
-					<p className="text-[12px] md:text-[14px] text-zinc-500 dark:text-zinc-400 line-clamp-3 md:line-clamp-4 lg:line-clamp-5  w-full text-ellipsis">
+					<p
+						className={`text-[12px] md:text-[14px] text-zinc-500 dark:text-zinc-400 md:line-clamp-4 lg:line-clamp-5  w-full text-ellipsis line-clamp-3`}>
 						{overview}
 					</p>
 				</div>
@@ -539,8 +541,7 @@ async function Card({
 								return (
 									<span
 										key={id}
-										className={`text-[10px] font-bold md:text-[12px] text-white
-								 bg-black py-1 px-2  rounded-md`}>
+										className={`text-[10px] font-bold md:text-[12px] text-white bg-black py-1 px-2  rounded-md`}>
 										{genre?.name}
 									</span>
 								);
@@ -551,7 +552,6 @@ async function Card({
 
 					{genre_ids && type === "anime"
 						? genre_ids.map((genre) => {
-								// const genre = genres.find((genre) => genre.id === id);
 								// const genreColor = animeGenres.find(
 								// 	(animeGenre) => animeGenre.name === genre
 								// )?.color;
