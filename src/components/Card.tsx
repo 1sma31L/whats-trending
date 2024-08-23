@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 // import Image from "next/image";
 export type TGenere = {
@@ -13,6 +14,7 @@ export type TCard = {
 	genre_ids?: number[] | string[];
 	release_date: string;
 	type: "movie" | "tv" | "anime";
+	id: number;
 };
 
 const movieGenres: TGenere[] = [
@@ -508,69 +510,83 @@ async function Card({
 	release_date,
 	genre_ids,
 	type,
+	id,
 }: TCard) {
+	const handlClick = () => {
+		type !== "anime" ? console.log("hello world") : null;
+	};
 	const genres =
 		type === "movie" ? movieGenres : type === "tv" ? tvGenres : animeGenres;
 	const numberOfGeneres = genre_ids?.length || 0;
 
 	return (
-		<div className="flex flex-row min-h-[150px] gap-1 mt-2 mb-4 border rounded-md md:rounded-xl  xl:hover:translate-x-2 overflow-hidden transition-all duration-300 dark:border-zinc-800 relative">
-			{/* <Image
-				src={poster_path}
-				alt="Poster Image"
-				quality={75}
-				className={`object-cover`}
-				width={140}
-				height={200}
-				priority
-			/> */}
-			<div className="p-3 pr-4 flex flex-col	">
-				<h2 className="text-[20px] sm:text-[24px] font-Fragment my-1 line-clamp-2 text-zinc-900 dark:text-zinc-100">
-					{`${title} (${release_date ? release_date.slice(0, 4) : ""})`}
-				</h2>
-				<div className="flex-grow max-w-full">
-					<p
-						className={`indent-2 text-[12px] md:text-[14px] text-zinc-500 dark:text-zinc-400 w-full text-ellipsis leading-[1.1rem] ${
-							type === "anime"
-								? "md:line-clamp-4 lg:line-clamp-5 line-clamp-3"
-								: ""
-						}`}>
-						{overview}
-					</p>
-				</div>
-				<div className="flex flex-row flex-wrap gap-1 md:gap-2 mb-1 mt-3">
-					{genre_ids && type !== "anime"
-						? genre_ids.map((id) => {
-								const genre = genres.find((genre) => genre.id === id);
-								return (
-									<span
-										key={id}
-										className={`text-[10px] font-bold md:text-[13px] text-white dark:text-zinc-900 bg-zinc-900 dark:bg-white py-[4px]   px-[8px] rounded-none`}>
-										{genre?.name}
-									</span>
-								);
-						  })
-						: null}
+		<Link
+			href={
+				type === "movie"
+					? `https://letterboxd.com/tmdb/${id}`
+					: type === "tv"
+					? `https://www.themoviedb.org/tv/${id}`
+					: `https://myanimelist.net/anime/${id}`
+			}
+			target="_blank">
+			<div className="flex flex-row min-h-[150px] gap-1 mt-2 mb-4 border rounded-md md:rounded-xl  xl:hover:translate-x-2 overflow-hidden transition-all duration-300 dark:border-zinc-800 relative cursor-pointer">
+				{/* <Image
+					src={poster_path}
+					alt="Poster Image"
+					quality={75}
+					className={`object-cover`}
+					width={140}
+					height={200}
+					priority
+				/> */}
+				<div className="p-3 pr-4 flex flex-col	">
+					<h2 className="text-[20px] sm:text-[24px] font-Fragment my-1 line-clamp-2 text-zinc-900 dark:text-zinc-100">
+						{`${title} (${release_date ? release_date.slice(0, 4) : ""})`}
+					</h2>
+					<div className="flex-grow max-w-full">
+						<p
+							className={`indent-2 text-[12px] md:text-[14px] text-zinc-500 dark:text-zinc-400 w-full text-ellipsis leading-[1.1rem] ${
+								type === "anime"
+									? "md:line-clamp-4 lg:line-clamp-5 line-clamp-3"
+									: ""
+							}`}>
+							{overview}
+						</p>
+					</div>
+					<div className="flex flex-row flex-wrap gap-1 md:gap-2 mb-1 mt-3">
+						{genre_ids && type !== "anime"
+							? genre_ids.map((id) => {
+									const genre = genres.find((genre) => genre.id === id);
+									return (
+										<span
+											key={id}
+											className={`text-[10px] font-bold md:text-[13px] text-white dark:text-zinc-900 bg-zinc-900 dark:bg-white py-[4px]   px-[8px] rounded-none`}>
+											{genre?.name}
+										</span>
+									);
+							  })
+							: null}
 
-					{/* For Anime */}
+						{/* For Anime */}
 
-					{genre_ids && type === "anime"
-						? genre_ids.map((genre) => {
-								// const genreColor = animeGenres.find(
-								// 	(animeGenre) => animeGenre.name === genre
-								// )?.color;
-								return (
-									<span
-										key={genre}
-										className={`text-[10px] font-bold md:text-[13px] text-white dark:text-zinc-900 bg-zinc-900 dark:bg-white py-[4px]   px-[8px] rounded-none`}>
-										{genre}
-									</span>
-								);
-						  })
-						: null}
+						{genre_ids && type === "anime"
+							? genre_ids.map((genre) => {
+									// const genreColor = animeGenres.find(
+									// 	(animeGenre) => animeGenre.name === genre
+									// )?.color;
+									return (
+										<span
+											key={genre}
+											className={`text-[10px] font-bold md:text-[13px] text-white dark:text-zinc-900 bg-zinc-900 dark:bg-white py-[4px]   px-[8px] rounded-none`}>
+											{genre}
+										</span>
+									);
+							  })
+							: null}
+					</div>
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 }
 

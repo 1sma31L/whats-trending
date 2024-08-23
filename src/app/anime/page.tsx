@@ -137,6 +137,7 @@ async function page() {
 					animes.map((anime) => {
 						return (
 							<Card
+								id={anime.mal_id}
 								type="anime"
 								title={anime.title}
 								overview={anime.synopsis}

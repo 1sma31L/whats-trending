@@ -41,7 +41,15 @@ export default function RootLayout({
 							Shows and Anime.
 						</p>
 						<div className="flex justify-between items-center">
-							<div className="flex flex-row justify-between items-center w-[80px] sm:w-[100px]">
+							<div className="flex items-center gap-2 w-[110px] sm:w-[120px]">
+								<a href="https://letterboxd.com/AbsurdVoid/" target="_blank">
+									<img
+										src="/letterboxd-mono.svg"
+										alt="letterboxd"
+										className="w-5 h-5 "
+									/>
+								</a>
+
 								<a href="https://x.com/11sma31l" target="_blank">
 									<img src="/x.svg" alt="x" className="w-5 h-5 dark:invert" />
 								</a>

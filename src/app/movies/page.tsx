@@ -66,6 +66,7 @@ async function Page() {
 								key={movie.id}
 								release_date={String(movie.release_date)}
 								genre_ids={movie.genre_ids}
+								id={movie.id}
 							/>
 						);
 					})

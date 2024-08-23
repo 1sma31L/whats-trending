@@ -66,6 +66,7 @@ async function page() {
 								key={tvshow.id}
 								release_date={String(tvshow.first_air_date)}
 								genre_ids={tvshow.genre_ids}
+								id={tvshow.id}
 							/>
 						);
 					})
