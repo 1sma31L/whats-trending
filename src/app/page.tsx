@@ -4,8 +4,8 @@ export default function Home() {
 	return (
 		<>
 			<AnimatedDiv id={0} className="text-[12px] sm:text-[14px]">
-				<div className="flex flex-col gap-2  w-full">
-					<div className="py-2">
+				<div className="flex flex-col gap-2 w-full">
+					<div className="my-2">
 						<h2 className="text-zinc-900 dark:text-white font-Fragment text-[20px] sm:text-[24px] pb-2">
 							How Does It Work ?
 						</h2>
