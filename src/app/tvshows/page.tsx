@@ -1,55 +1,24 @@
 import AnimatedDiv from "@/components/AnimatedDiv";
 import Card from "@/components/Card";
 import React from "react";
+import { fetchData } from "@/lib/basicFuncions";
+import { TVShow } from "@/types/types";
 
-export type TTVShow = {
-	backdrop_path: string;
-	id: number;
-	name: string;
-	original_name: string;
-	overview: string;
-	poster_path: string;
-	media_type: string;
-	adult: boolean;
-	original_language: string;
-	genre_ids: number[];
-	popularity: number;
-	first_air_date: Date;
-	vote_average: number;
-	vote_count: number;
-	origin_country: string[];
-};
-
-async function getTvShows() {
-	const url = "https://api.themoviedb.org/3/trending/tv/day?language=en-US";
-	const options = {
-		method: "GET",
-		headers: {
-			accept: "application/json",
-			Authorization: `Bearer ${process.env.ACCESS_TOKEN_AUTH}`,
-		},
-		next: { revalidate: 60 },
-	};
-
-	try {
-		const response = await fetch(url, options);
-		if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`);
-		}
-		const data = await response.json();
-		return data.results || [];
-	} catch (err) {
-		console.error("Fetch error:", err);
-		return [];
-	}
-}
 export const generateMetadata = () => {
 	return {
 		title: "What's Trending in TV Shows ?",
 	};
 };
+
 async function page() {
-	const tvshows: TTVShow[] = await getTvShows();
+	const tvshows = (await fetchData(
+		"https://api.themoviedb.org/3/trending/tv/day?language=en-US",
+		"tv",
+		{
+			accept: "application/json",
+			Authorization: `Bearer ${process.env.ACCESS_TOKEN_AUTH}`,
+		}
+	)) as TVShow[];
 	const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w200/";
 
 	return (

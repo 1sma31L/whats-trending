@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import { Analytics } from "@vercel/analytics/react";
-import ThemeToggler from "@/components/theme-toggler";
-import { ThemeProvider } from "@/app/theme-provider";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import { TabsDemo } from "../components/TabsDemo";
+import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from "@/app/theme-provider";
+import ThemeToggler from "@/components/ThemeToggler";
+import { Inter } from "next/font/google";
+import { NavTabs } from "../components/NavTabs";
+import { socialMediaAccounts } from "@/data/socialMedia";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -42,38 +43,22 @@ export default function RootLayout({
 						</p>
 						<div className="flex justify-between items-center">
 							<div className="flex items-center gap-2 w-[110px] sm:w-[120px]">
-								<a href="https://letterboxd.com/AbsurdVoid/" target="_blank">
-									<img
-										src="/letterboxd-mono.svg"
-										alt="letterboxd"
-										className="w-5 h-5 "
-									/>
-								</a>
-
-								<a href="https://x.com/11sma31l" target="_blank">
-									<img src="/x.svg" alt="x" className="w-5 h-5 dark:invert" />
-								</a>
-								<a href="https://github.com/1sma31l" target="_blank">
-									<img
-										src="/github.svg"
-										alt="github"
-										className="w-5 h-5 dark:invert"
-									/>
-								</a>
-								<a
-									href="https://linkedin.com/in/ismail-boussekine"
-									target="_blank">
-									<img
-										src="/linkedin.svg"
-										alt="linkedin"
-										className="w-5 h-5 dark:invert"
-									/>
-								</a>
+								{socialMediaAccounts.map((account) => {
+									return (
+										<a href={account.link} target="_blank">
+											<img
+												src={account.src}
+												alt={account.name}
+												className={`w-5 h-5 ${account.className}`}
+											/>
+										</a>
+									);
+								})}
 							</div>
-							<ThemeToggler />
+							<ThemeToggler className="w-8 h-8" />
 						</div>
 						<hr className="mt-6 dark:border-zinc-700 border-zinc-300" />
-						<TabsDemo />
+						<NavTabs />
 					</header>
 					<main>{children}</main>
 					<footer className="lg:w-[1050px] w-full pt-8 pb-4">

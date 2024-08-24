@@ -1,7 +1,6 @@
 import { Tabs } from "./ui/tabs";
-import AnimatedDiv from "./AnimatedDiv";
 
-export function TabsDemo() {
+export function NavTabs() {
 	const tabs = [
 		{
 			title: "About",

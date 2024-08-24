@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/shaduiUtils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 type Tab = {
