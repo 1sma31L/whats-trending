@@ -4,7 +4,6 @@ import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 import * as Types from "../types/types";
 import * as Genres from "../data/genres";
-import Image from "next/image";
 
 async function Card({
 	title,
@@ -35,17 +34,13 @@ async function Card({
 			}
 			target="_blank">
 			<div className="flex flex-row min-h-[150px] gap-1 mt-2 mb-4 border rounded-md md:rounded-xl  xl:hover:translate-x-2 overflow-hidden transition-all duration-300 dark:border-zinc-800 relative cursor-pointer">
-				<Image
+				<img
 					src={poster_path}
 					alt="Poster Image"
-					quality={75}
-					className={`object-cover`}
-					width={140}
-					height={200}
-					priority
+					className="object-cover w-[120px]"
 				/>
 				<div className="p-3 pr-4 flex flex-col	">
-					<h2 className="text-[20px] sm:text-[24px] font-Fragment my-1 line-clamp-2 text-zinc-900 dark:text-zinc-100">
+					<h2 className="text-[18px] sm:text-[20px] md:text-[24px] font-Fragment my-1 line-clamp-2 text-zinc-900 dark:text-zinc-100">
 						{`${title} (${release_date ? release_date.slice(0, 4) : ""})`}
 					</h2>
 					<div className="flex-grow max-w-full">
@@ -58,7 +53,10 @@ async function Card({
 							{overview}
 						</p>
 					</div>
-					<div className="flex flex-row flex-wrap gap-1 md:gap-2 mb-1 mt-3">
+					<div
+						className={`flex flex-row flex-wrap gap-1 md:gap-2 mb-1 mt-3 ${
+							type === "movie" ? "pr-8" : ""
+						}`}>
 						{/* Form movies and Tv Shows */}
 
 						{genre_ids
