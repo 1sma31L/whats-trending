@@ -28,7 +28,7 @@ async function getTvShows() {
 			accept: "application/json",
 			Authorization: `Bearer ${process.env.ACCESS_TOKEN_AUTH}`,
 		},
-		next: { revalidate: 7200 },
+		next: { revalidate: 60 },
 	};
 
 	try {
