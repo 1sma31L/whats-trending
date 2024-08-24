@@ -55,7 +55,7 @@ const isAvailable = async (id: number) => {
 			accept: "application/json",
 			Authorization: `Bearer ${process.env.ACCESS_TOKEN_AUTH}`,
 		},
-		cache: "no-store" as RequestCache,
+		next: { revalidate: 3600 },
 	};
 	try {
 		const data = await fetch(url, options);
