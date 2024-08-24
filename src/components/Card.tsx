@@ -1,12 +1,9 @@
 import Link from "next/link";
 import React from "react";
-// import Image from "next/image";
-export type TGenere = {
-	id?: number;
-	name: string;
-	color: string;
-};
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { IoMdCheckmarkCircle } from "react-icons/io";
 
+// import Image from "next/image";
 export type TCard = {
 	title: string;
 	overview: string;
@@ -15,6 +12,13 @@ export type TCard = {
 	release_date: string;
 	type: "movie" | "tv" | "anime";
 	id: number;
+	isAvailable?: boolean;
+};
+
+export type TGenere = {
+	id?: number;
+	name: string;
+	color: string;
 };
 
 const movieGenres: TGenere[] = [
@@ -511,6 +515,7 @@ async function Card({
 	genre_ids,
 	type,
 	id,
+	isAvailable,
 }: TCard) {
 	const handlClick = () => {
 		type !== "anime" ? console.log("hello world") : null;
@@ -584,6 +589,15 @@ async function Card({
 							  })
 							: null}
 					</div>
+				</div>
+				<div className="absolute bottom-3 right-4 w-5 h-6">
+					{isAvailable === undefined ? (
+						""
+					) : isAvailable ? (
+						<IoMdCheckmarkCircle className="w-full h-full" />
+					) : (
+						<IoIosCheckmarkCircleOutline className="w-full h-full" />
+					)}
 				</div>
 			</div>
 		</Link>
