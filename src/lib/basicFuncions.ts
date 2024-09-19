@@ -8,7 +8,7 @@ async function fetchData(
 	const options = {
 		method: "GET",
 		headers,
-		next: { revalidate: 7200 },
+		next: { revalidate: 60 * 60 * 12 },
 	};
 
 	try {
@@ -32,8 +32,8 @@ async function isAvailable(id: number): Promise<boolean> {
 			accept: "application/json",
 			Authorization: `Bearer ${process.env.ACCESS_TOKEN_AUTH}`,
 		},
-		next: { revalidate: 3600 },
-	};
+		cache: "force-cache",
+	} as RequestInit;
 
 	try {
 		const data = await fetch(url, options);

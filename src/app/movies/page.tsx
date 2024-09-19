@@ -1,13 +1,15 @@
-import React from "react";
-import { Movie } from "@/types/types";
-import AnimatedDiv from "@/components/AnimatedDiv";
-import Card from "@/components/Card";
+import "dotenv/config";
+
 import {
 	IoIosCheckmarkCircleOutline,
 	IoMdCheckmarkCircle,
 } from "react-icons/io";
 import { fetchData, isAvailable } from "@/lib/basicFuncions";
-import "dotenv/config";
+
+import AnimatedDiv from "@/components/AnimatedDiv";
+import Card from "@/components/Card";
+import { Movie } from "@/types/types";
+import React from "react";
 
 export const generateMetadata = () => {
 	return {
