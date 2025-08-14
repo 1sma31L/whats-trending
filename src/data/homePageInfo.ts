@@ -13,7 +13,7 @@ export const info: Info[] = [
 		title: "How Was It Made?",
 		description: `It was made using React with Next.js for routing and SSR,
       TailwindCSS and Framer Motion for styling and animations,
-      some components from AceternutyUI and Shadcn-ui (FUCK THEM),
+      some components from AceternutyUI and Shadcn-ui,
       and TMDB API with Jikan API for data fetching as mentioned before.`,
 	},
 	{
@@ -22,7 +22,7 @@ export const info: Info[] = [
       currently trending in the entertainment industry.`,
 	},
 	{
-		title: "Who The Heck Am I?",
-		description: `Ismail, student at ENSTA. I live in Algeria. You hate it? So do I.`,
+		title: "Who Am I?",
+		description: `Ismail, student at ENSTA. I live in Algeria.`,
 	},
 ];

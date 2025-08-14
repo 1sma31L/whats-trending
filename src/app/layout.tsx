@@ -60,8 +60,8 @@ export default function RootLayout({
 						<hr className="mt-6 dark:border-zinc-700 border-zinc-300" />
 						<NavTabs />
 					</header>
-					<main>{children}</main>
-					<footer className="lg:w-[1050px] w-full pt-8 pb-4">
+					<main className="min-h-[64vh]">{children}</main>
+					<footer className="lg:w-[1050px] w-full">
 						<p className="font-Fragment text-[12px] sm:text-[14px] w-full text-center mx-auto">
 							Made with <span className="hidden dark:inline-block">🤍</span>
 							<span className="dark:hidden">🖤</span> by{" "}
